@@ -7,6 +7,10 @@
     "start": "nodemon src/server/server.js",
     "test": "nyc --reporter=html --reporter=text mocha '**/*.spec.js' --exit"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdo-anderson/tourist-spots-service.git"
+  },
   "keywords": [
     "tourism"
   ],
