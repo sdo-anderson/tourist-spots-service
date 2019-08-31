@@ -18,7 +18,6 @@ describe("GET ROOT", () => {
       .get("/")
       .end((err, res) => {
         res.should.have.status(200);
-        console.log("TYPE", typeof res.text);
         expect(JSON.parse(res.text))
           .to.have.property("status")
           .equal("Conectado ao Server");
@@ -43,7 +42,6 @@ describe("GET SPOTS", () => {
         query: "{getSpots { address }}"
       })
       .end((err, res) => {
-        console.log("SPOTS ===> ", JSON.parse(res.text).data.getSpots);
         res.should.have.status(200);
         JSON.parse(res.text)
           .data.getSpots.should.have.property("address")
