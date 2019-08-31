@@ -1,16 +1,16 @@
 sudo: false
 language: node_js
 node_js:
-  - node
+- node
 before_script:
-  - npm install
-  - npm install -g coveralls
+- npm install
+- npm install -g coveralls
 after_success:
-  - npm run coveralls
+- npm run coveralls
 deploy:
   provider: heroku
   api_key:
-    secure: OcrctAP+77nS40gbTbm81Q4u0wyG0IM7xp4xBIqH6s2LdvmWQrSyiyKBg89o8xHKVX8E+i+Ik/c0s29kgeDDmV9qhskRVN18sVsCtPU2ri4i/w1Q/1J+dKVnEZ3lcytTOsAEQL9+PcZM79EZUGSnBvBNjMaimFRLABx4FYn7usrpsMsBVTsxkwi+G+bs/xQtN+G62s//Knu8iK3KMSIiBvHubfgpT/ebR1NBqhD1jg35wPPR/Opkwlenp3hIoo7f95FDZXtsmihP7E3RigD9VQjGEL5/r6Bn6dbBcULkM8qSH33Mi3Q2zVtXA3TEkJdDUuhEq/y+jblkR/whjj0w9Entc6PLpj6vRjMDPbCOhcluEHcGFCN4UsiPc37diHUb3HFKshiV8w6krF8LPSQL2SR9+tXTPyzsGezomBC5ATQGjuiw5XIGpne8ynQoxAyUkq8dEsJZ2JtBNhJI3gT711VPblf6rFLTWUP25cMuo9ARfvzk0TWPUoEdZ+01gzxQLRd7LKNqK729kUZiZRWK81bSbWm8WAC39LE0pSaLGJTwODa3xKyabXkx6vO5rAMMK3VwqVBGiujdIS2wG9FPdZ+UhUHx7wCtDz7j+FS0FEYY0JyoeKJz5I7fDdCaufhl+S+FQ0skUJEnWyt15qqRUfj9aMSHh/oB9Ieqa1lW0No=
+    secure: A3L4vLAHX3NthDJjx2MQFw1f3FuW4wVWNksTFOF1pj1gCuvz+QFGRdd+5zMOoNLjyxrrq/PEIXEkCjNwAMCTueLYC2yHyG4rEuF4hd7DjTNJcNwCreFvTRPCQgoG2lkszJvr53fizwaV5Z53HM+FlcHx4ZfWqcPhHmSJ51wKqVhRRD5fosvBHpG0yhE676sadfkJAvd3PzWaGfn6dH57avE4vdLcgauzeteh5Q4qL8rJWVEvAWeOrpaOj2yT6Mi0efsXxT4gBax/X9LsHlaBhHeTcFZpKl8QXRydqnt+tNQ2+eZXaE/7jTZ9siJxr6s+VwB8bYHhUcluEA9lRbc3GIUI2jWAOtGHy7cIf9gaDcJ82u45KR1iHtjZ0AHoLOdkQN77jwiExIQ9keaQnDGIGbowG4YV3F/0XY2JRpdh6MPwcrdqv21iTGXolS5WlPLhDOCSKPhztTViNvpWJDlcbX+K+il2OL6y1sHN9ulNTIX3G/ejalX7w4W4KiFXtsCtE40hkmL1m0QgCgyPI6PnEooiMqQPYvW7bECPImM70lSP+yh/6xYcExoZtGnU5yY/GwHFbN0znCe8u+N64/BlamnFWsRGQTNQY/KokMK/3ribjg7bv9wRr2ph4+uaCgW8CbhtYisgFvOH80fVSsSwf2vyFTbL8D+9Et6RGhn/Ftc=
   on:
     branch: rev-1.0.0
   app: tourist-spots-service
