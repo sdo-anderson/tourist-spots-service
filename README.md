@@ -8,4 +8,3 @@
 # Tourist Spots
 
 ## Service for consult tourist spots
-
