@@ -8,4 +8,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 9001
-CMD ["node", "src/server/server.js"]
+CMD ["npm", "start"]

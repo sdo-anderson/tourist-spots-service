@@ -4,7 +4,8 @@
   "description": "Tourist spots consultation service",
   "main": "src/server/server.js",
   "scripts": {
-    "start": "nodemon src/server/server.js",
+    "start": "node src/server/server.js",
+    "dev-start": "nodemon src/server/server.js",
     "test": "nyc --reporter=html --reporter=text mocha '**/*.spec.js' --exit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
