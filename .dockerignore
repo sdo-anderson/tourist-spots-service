@@ -4,3 +4,7 @@ Dockerfile
 .dockerignore
 .git
 .gitignore
+coverage
+README.md
+LICENSE
+__test__
