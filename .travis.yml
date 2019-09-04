@@ -1,0 +1,16 @@
+sudo: false
+language: node_js
+node_js:
+- node
+before_script:
+- npm install
+- npm install -g coveralls
+after_success:
+- npm run coveralls
+deploy:
+  provider: heroku
+  api_key:
+    secure: QVz+h6p0gLfQoqWp2j+fF0dlL93qCAtddi3k7yRXvjDTkw6FfSMxHz4/3o64rTu7ttVACm3yMxjtk5/hKqPuxMX6kf0Ks3s14EHf3HRP4VgruXJBNncP/rXc4X1KnM/k9iVSOdO1XHRPUU4GNfHZ6aaaTqzf8sTkN8KW3gd7IJKoKq8proxemWOujCzVzu1LXuBjQmPn92r7KD9QJrw3e2E6RXYOhoV0t4VwE+3jD/LHmIudDHMKl5fDj51uDNOYuO3w5BBaYRf84GGHUAUDOdncfyGB+pBfnv1FKInLwDa2KzfX0qTidbTDTGO4nMADKBsXMMoVIpM4qE3kfZHz2YVcntRnn5A1NwdYkb4AbcksU+x6K0D3rMGtp7wIn54bVaFrx5WDWH9yn+cFTNDeYoBiM/E19e1Nmul8vY96uuSY+JKFkxxzgZs5wnK+adByjzxvw7p3bkqv12yWxnnp1l9s7/oL30346MgOhRoI/KewlI/7fF+bXdXeFnGowlIZa8N+RC43QzzLRAE8t1/nWQnODundl+scvFKwkBTzfqUAT8U5DXy/E1Ox7d0/U5FR0fGmVMK1Bt1wQvdsgxaUYn82YUdHPMKAa+SYfAUrbiKA3KXAjBtmEdL/W+NNPcaCkXNSUMZNcDcuoa23jZlv/w0+F9RLlpwXiJO9OrXnNpw=
+  on:
+    branch: rev-1.0.0
+  app: tourist-spots-service
