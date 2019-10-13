@@ -1,12 +1,12 @@
 const express = require("express");
 const graphqlHTTP = require("express-graphql");
-const spots = require("../schemas/schemaSpots");
+const schema = require("../schemas/schemaTouristSpots");
 const router = express.Router();
 
 router.use(
   "/api",
   graphqlHTTP({
-    schema: spots,
+    schema,
     graphiql: true
   })
 );
