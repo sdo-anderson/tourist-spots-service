@@ -14,22 +14,15 @@ const getTouristSpots = async(place) => {
 
   let googleResponse = await axios
     .get(urlMaps, { params })
-    .then(response => {
-
-      return response
-
-    })
     .catch(err => {
 
       return err.response;
 
     });
-    console.log("googleResponse ===> ", googleResponse)
+
     if (googleResponse.data && googleResponse.data.results) {
-
-      googleResponse = _.map(googleResponse.data.results, results => {
-
-        return _.map(results, result => {
+      console.log("response => ", googleResponse)
+      return _.map(googleResponse.data.results, result => {
 
           return _.pick(result, [
             "formatted_address",
@@ -37,12 +30,10 @@ const getTouristSpots = async(place) => {
             "photos",
             "opening_hours"
           ]);
-          
-        });
 
       })
     }
-    console.log("result ===> ", googleResponse)
+
     return googleResponse;
 };
 

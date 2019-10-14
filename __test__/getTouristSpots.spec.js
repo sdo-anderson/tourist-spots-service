@@ -18,18 +18,25 @@ describe("GET TOURIST SPOT", () => {
   let mock;
 
   before(() => {
+
       mock = new MockAdapter(axios, { delayResponse: 2000 });
+
   });
 
   afterEach(() => {
+
       mock.reset();
+
   });
 
   after(() => {
+
       mock.restore();
+
   });
 
   it("it should GET TOURIST SPOTS the SUCCESS status", async () => {
+
     let params = {
       key: process.env.API_KEY_MAPS,
       query: "tourist spots teste"

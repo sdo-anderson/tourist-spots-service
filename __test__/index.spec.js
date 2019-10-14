@@ -4,6 +4,8 @@ const chai = require("chai"),
 const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
 
+const app = require("../src/index");
+
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
 
@@ -19,9 +21,10 @@ describe("GET ROOT", () => {
   it("it should GET ROOT the success status", done => {
 
     chai
-      .request("http://localhost:5000")
+      .request(app)
       .get("/")
       .end((err, res) => {
+
         res.should.have.status(200);
         expect(JSON.parse(res.text))
           .to.have.property("status")
@@ -44,15 +47,21 @@ describe("GET SPOTS", () => {
   let mock;
 
   before(() => {
+
       mock = new MockAdapter(axios, { delayResponse: 2000 });
+
   });
 
   afterEach(() => {
+
       mock.reset();
+
   });
 
   after(() => {
+
       mock.restore();
+
   });
 
   it("it should GET SPOTS the SUCCESS status", done => {
@@ -65,15 +74,14 @@ describe("GET SPOTS", () => {
     mock.onGet(process.env.URL_GOOGLE_MAPS, { params }).reply(200, { results: [{ formatted_address: "teste", name: "OK", photos: "teste", opening_hours: { open_now: true} }] });
 
     chai
-      .request("http://localhost:5000")
+      .request(app)
       .post("/api")
       .set("Content-Type", "application/graphql")
       .send(`{ query: getSpots(place: "teste") { name } }`)
       .end((err, res) => {
 
-        console.log(" ==>>", res.body.data.query)
         res.should.have.status(200);
-        res.body.data.query[0].should.have.property("name");
+        res.body.data.query[0].should.have.property("name").equal("OK");
 
         done();
       });
